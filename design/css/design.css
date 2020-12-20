@@ -117,7 +117,7 @@ body main footer {
   background-size: cover;
 }
 
-@media only screen and (min-width: 300px) {
+@media only screen and (min-width: 375px) {
   .card-box {
     width: 80% !important;
   }
@@ -126,7 +126,7 @@ body main footer {
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 700px) {
   .card-box {
     width: 50% !important;
   }
