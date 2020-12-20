@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./design/css/design.css">
+  <link rel="stylesheet" href="./design/all.min.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./design/images/favicon-32x32.png">
+  
+  <title> Launch countdown timer</title>
+
+<body>
+
+    <main class="container">
+      
+        <h6>  We're launching soon</h6>
+
+        <section>
+          <div class="timer"> 
+            <div class="card-box" id="day">00</div>
+            <small class="card-label">Days</small>
+          </div>
+
+          <div class="timer"> 
+            <div class="card-box" id="hour">00</div>
+            <small class="card-label" >Hours</small>
+          </div>
+
+          <div class="timer"> 
+            <div class="card-box" id="min">00</div>
+            <small class="card-label" >Minutes</small>
+          </div>
+
+          <div class="timer"> 
+            <div class="card-box" id="sec">00</div>
+            <small class="card-label">Seconds</small>
+          </div>
+        </section>
+        
+        
+
+        <footer>
+          <section class="contact">
+            <i class="fab fa-facebook" id="fb" style="font-size: 1.5rem;"></i>
+            <i class="fab fa-pinterest" id="pin" style="font-size: 1.5rem;"></i>
+            <i class="fab fa-instagram" id="insta" style="font-size: 1.5rem;"></i>
+          </section>
+        </footer>
+    </main>
+
+<script src="./design/all.min.js"></script>
+ <script>
+   function countDown() {
+    var now = new Date();
+    var eventDate = new Date(2021, 01, 24);
+
+    var currentTime = now.getTime();
+    var eventTime = eventDate.getTime();
+
+    var realTime = eventTime - currentTime;
+
+    var s = Math.floor(realTime / 1000);
+    var min = Math.floor(s / 60);
+    var hr = Math.floor(min / 60);
+    var day = Math.floor(hr / 24);
+  
+    hr %= 24;
+    min %= 60;
+    s %= 60;
+
+    hr = (hr < 10) ? "0" + hr : hr;
+    min = (min < 10) ? "0" + min : min;
+    s  = (s  < 10) ? "0" + s  : s ;
+
+    document.getElementById('day').innerText = day;
+    document.getElementById('hour').innerText = hr;
+    document.getElementById('min').innerText = min;
+    document.getElementById('sec').innerText = s;
+  
+  }
+ 
+   var interval = setInterval(countDown, 1000);
+
+ 
+
+ </script>
+</body>
+</html>

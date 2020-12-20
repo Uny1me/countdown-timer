@@ -1,0 +1,114 @@
+:root {
+  --gblue: hsl(237, 18%, 59%);
+  --softred: hsl(345, 95%, 68%);
+  --white: hsl(0, 0%, 100%);
+  --desblue: hsl(236, 21%, 26%);
+  --desblue2: hsl(236, 20%, 34%);
+  --vdblue: hsl(235, 16%, 14%);
+  --vbblue: hsl(234, 17%, 12%);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+}
+
+body {
+  font-family: "Red Hat Text";
+  main {
+    min-height: 100vh;
+    width: 100%;
+    background: url(../images/bg-stars.svg);
+    background-color: var(--vbblue);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 8rem;
+
+    h6 {
+      font-size: clamp(0.8em, 2vw, 1em);
+      letter-spacing: 0.21rem;
+      font-weight: 900;
+    }
+
+    section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gblue);
+
+      .timer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 20%;
+      }
+
+      .card-box {
+        color: var(--softred);
+        padding: 1.5rem 0;
+        text-align: center;
+        font-size: 2.4rem;
+        border-radius: 3px;
+        background: linear-gradient(var(--desblue) 50%, var(--desblue2) 50%);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.015),
+          0 8px 8px rgba(0, 0, 0, 0.035), 0 12px 10px rgba(0, 0, 0, 0.055),
+          0 16px 12px rgba(0, 0, 0, 0.075);
+      }
+      .card-label {
+        padding: 1rem 0;
+      }
+    }
+    .contact {
+      justify-content: space-between;
+      margin: 4rem auto;
+    }
+    #fb:hover,
+    #pin:hover,
+    #insta:hover {
+      color: var(--softred);
+    }
+
+    footer {
+      height: 20vh;
+      background: url(../images/pattern-hills.svg) !important;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}
+
+@media only screen and (min-width: 375px) {
+  .card-box {
+    width: 80% !important;
+  }
+  .contact {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .card-box {
+    width: 50% !important;
+  }
+  .contact {
+    width: 30%;
+  }
+}
+@media only screen and (min-width: 1068px) {
+  .card-box {
+    width: 35% !important;
+  }
+  .contact {
+    width: 10%;
+  }
+}
